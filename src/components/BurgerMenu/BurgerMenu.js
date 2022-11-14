@@ -20,15 +20,12 @@ const BurgerMenu = ({ currentSlide, updateSlide }) => {
   return (
     <>
       <nav className="nav" role="navigation">
-        <div>
-          <div className="nav__logo">Logo</div>
-        </div>
         <div className={`menu ${isMenuOpen ? "menu--show" : ""}`}>
           <ul className="menu__links">
             {headerMenu.getHeaderMenu().map((menuItem) => (
               <li key={menuItem.key}>
                 <Link
-                  className={menuItem.key === currentSlide ? "active" : ""}
+                  className={`${menuItem.class}`}
                   to={menuItem.slug}
                   onClick={() => {
                     menuClick(menuItem.key);
